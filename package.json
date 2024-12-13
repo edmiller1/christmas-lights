@@ -5,6 +5,7 @@
     "node": ">=20.18.1",
     "pnpm": "^9.14.2"
   },
+  "packageManager": "pnpm@9.14.2",
   "scripts": {
     "build": "turbo run build",
     "clean": "git clean -xdf node_modules",
@@ -23,17 +24,11 @@
     "ui-add": "turbo run ui-add"
   },
   "devDependencies": {
-    "@acme/prettier-config": "*",
+    "@acme/prettier-config": "workspace:*",
     "@turbo/gen": "^2.3.1",
     "prettier": "catalog:",
     "turbo": "^2.3.1",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config",
-  "packageManager": "npm@10.8.3",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "tooling/*"
-  ]
+  "prettier": "@acme/prettier-config"
 }

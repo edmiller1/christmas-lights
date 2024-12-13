@@ -24,8 +24,8 @@
     "typescript-eslint": "^8.15.0"
   },
   "devDependencies": {
-    "@acme/prettier-config": "*",
-    "@acme/tsconfig": "*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "@types/eslint__js": "8.42.3",
     "eslint": "catalog:",
     "prettier": "catalog:",

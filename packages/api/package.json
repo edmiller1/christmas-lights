@@ -1,7 +1,7 @@
 {
-  "name": "@acme/validators",
-  "private": true,
+  "name": "@acme/api",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "exports": {
     ".": {
@@ -19,12 +19,17 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
+    "@acme/auth": "workspace:*",
+    "@acme/db": "workspace:*",
+    "@acme/validators": "workspace:*",
+    "@trpc/server": "catalog:",
+    "superjson": "2.2.1",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@acme/eslint-config": "*",
-    "@acme/prettier-config": "*",
-    "@acme/tsconfig": "*",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
