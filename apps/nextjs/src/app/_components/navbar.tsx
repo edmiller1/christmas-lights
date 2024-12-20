@@ -73,7 +73,7 @@ export const Navbar = () => {
                 <div className="h-8 w-px bg-gray-200" />
 
                 <Link
-                  href="/sign-up"
+                  href="/app"
                   className={buttonVariants({
                     size: "sm",
                     variant: "outline",
@@ -83,7 +83,7 @@ export const Navbar = () => {
                   Get the app <Smartphone className="size-4" />
                 </Link>
                 <Link
-                  href="/sign-up"
+                  href="/sign-in"
                   className={buttonVariants({
                     size: "sm",
                     className: "flex items-center gap-1.5",

@@ -10,6 +10,8 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 import "~/app/globals.css";
 
+import Head from "next/head";
+
 import { env } from "~/env";
 
 export const metadata: Metadata = {
@@ -43,6 +45,9 @@ export const viewport: Viewport = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans text-foreground antialiased",
