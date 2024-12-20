@@ -15,6 +15,7 @@ export const restrictEnvAccess = tseslint.config(
   {
     files: ["**/*.js", "**/*.ts", "**/*.tsx"],
     rules: {
+      "@typescript-eslint/no-unnecessary-condition": "off",
       "no-restricted-properties": [
         "error",
         {
