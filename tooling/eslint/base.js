@@ -17,6 +17,8 @@ export const restrictEnvAccess = tseslint.config(
     rules: {
       "@typescript-eslint/consistent-type-imports": "off",
       "@typescript-eslint/no-unnecessary-condition": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-floating-promises": "off",
       "no-restricted-properties": [
         "error",
         {

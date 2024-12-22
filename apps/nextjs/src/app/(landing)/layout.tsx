@@ -1,11 +1,14 @@
 import type { ReactNode } from "react";
 
+import { auth } from "@acme/auth";
+
 import { Navbar } from "../_components/navbar";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = async ({ children }: { children: ReactNode }) => {
+  const user = await auth();
   return (
     <>
-      <Navbar />
+      <Navbar user={user} />
       {children}
     </>
   );

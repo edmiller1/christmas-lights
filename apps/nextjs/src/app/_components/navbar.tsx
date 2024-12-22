@@ -2,13 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Smartphone } from "lucide-react";
 
+import type { Session } from "@acme/auth";
 import { Button, buttonVariants } from "@acme/ui/button";
 
 import { MaxWidthWrapper } from "./max-width-wrapper";
 
-export const Navbar = () => {
-  const user = false;
+interface Props {
+  user: Session | null;
+}
 
+export const Navbar = ({ user }: Props) => {
   return (
     <nav className="sticky inset-x-0 top-0 z-[100] h-16 w-full border-b border-muted bg-background backdrop-blur-lg transition-all">
       <MaxWidthWrapper>

@@ -2,7 +2,7 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 
 const spinnerVariants = cva(
-  "animate-spin rounded-full border-4 border-rose-200 border-t-rose-700 duration-700",
+  "animate-spin rounded-full border-4 border-red-200 border-t-red-700 duration-700",
   {
     variants: {
       size: {
