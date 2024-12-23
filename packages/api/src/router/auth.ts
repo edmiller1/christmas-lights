@@ -49,4 +49,10 @@ export const authRouter = {
 
     return { isSynced: true };
   }),
+  getUser: protectedProcedure.query(async ({ ctx }) => {
+    const user = await ctx.db.query.User.findFirst({
+      where: eq(User.id, ctx.session.user.id),
+    });
+    return user;
+  }),
 } satisfies TRPCRouterRecord;

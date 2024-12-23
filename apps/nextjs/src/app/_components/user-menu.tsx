@@ -1,8 +1,7 @@
 "use client";
 
-import { Laptop, Moon, Sun } from "lucide-react";
+import Link from "next/link";
 import { signOut } from "next-auth/react";
-import { useTheme } from "next-themes";
 
 import type { Session } from "@acme/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
@@ -12,21 +11,17 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@acme/ui/dropdown-menu";
+
+import { ThemeChange } from "./theme-change";
 
 interface Props {
   user: Session;
 }
 
 export const UserMenu = ({ user }: Props) => {
-  const { theme, setTheme } = useTheme();
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -65,50 +60,10 @@ export const UserMenu = ({ user }: Props) => {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Dashboard</DropdownMenuItem>
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Change theme</DropdownMenuSubTrigger>
-          <DropdownMenuPortal>
-            <DropdownMenuSubContent>
-              <DropdownMenuItem
-                className="flex items-center justify-between"
-                onClick={() => setTheme("light")}
-              >
-                <div className="flex items-center">
-                  <Sun className="mr-2 size-4" />
-                  Light
-                </div>
-                {theme === "light" ? (
-                  <span className="h-2 w-2 rounded-lg bg-primary"></span>
-                ) : null}
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                className="flex items-center justify-between"
-                onClick={() => setTheme("dark")}
-              >
-                <div className="flex items-center">
-                  <Moon className="mr-2 size-4" />
-                  Dark
-                </div>
-                {theme === "dark" ? (
-                  <span className="h-2 w-2 rounded-lg bg-primary"></span>
-                ) : null}
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                className="flex items-center justify-between"
-                onClick={() => setTheme("system")}
-              >
-                <div className="flex items-center">
-                  <Laptop className="mr-2 size-4" />
-                  System
-                </div>
-                {theme === "system" ? (
-                  <span className="h-2 w-2 rounded-lg bg-primary"></span>
-                ) : null}
-              </DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuPortal>
-        </DropdownMenuSub>
+        <DropdownMenuItem>
+          <Link href="/dashboard">Dashboard</Link>
+        </DropdownMenuItem>
+        <ThemeChange />
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut({ redirectTo: "/explore" })}>
           Sign out
