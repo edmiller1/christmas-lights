@@ -2,8 +2,6 @@ import { redirect } from "next/navigation";
 
 import { auth } from "@acme/auth";
 
-import { api } from "~/trpc/server";
-
 const DashboardPage = async () => {
   const session = await auth();
 
@@ -11,7 +9,7 @@ const DashboardPage = async () => {
     redirect("/sign-in");
   }
 
-  const user = await api.auth.getUser();
+  const user = session?.user;
 
   if (!user) {
     redirect("/welcome");

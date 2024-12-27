@@ -101,6 +101,7 @@ export const Decoration = pgTable("decoration", (t) => ({
 export const DecorationImage = pgTable("decoration_image", (t) => ({
   id: t.uuid().notNull().primaryKey().defaultRandom(),
   url: t.varchar({ length: 255 }).notNull(),
+  index: t.integer().notNull(),
   decorationId: t
     .uuid()
     .notNull()
